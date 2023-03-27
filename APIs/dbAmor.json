@@ -1,0 +1,12 @@
+{
+    "cep": {
+        "code": "88107-483",
+        "state": "SC",
+        "city": "São José",
+        "district": "Forquilhas",
+        "address": "Rua Justino Machado de Loreto",
+        "status": 200,
+        "ok": true,
+        "statusText": "ok"
+    }
+}

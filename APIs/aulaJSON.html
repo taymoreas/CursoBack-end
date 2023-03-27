@@ -1,62 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 
 </head>
-<body>
-    <div style="text-align: center">
-        <h1>Aula json</h1>
 
-    <input type="number" id="cep"placeholder="Digite o CEP">
-      <br>
+<body>
+  <div style="text-align: center">
+    <h1 style="color: darkcyan;">Aula json</h1>
+
+    <input type="number" id="cep" placeholder="Digite o CEP">
+    <br>
     <input type="text" id="rua" placeholder="Logradouro" value="Rua">
-      <br>
+    <br>
     <input type="text" id="bairro" placeholder="Bairro" value="bairro">
-      <br>
+    <br>
     <input type="text" id="pais" placeholder="Pais" value="pais">
-      <br>
+    <br>
     <input type="text" id="estado" placeholder="uf" value="estado">
-      <br>
+    <br>
     <input type="text" id="cidade" placeholder="localidade" value="cidade">
-      <br>
-  <button onclick="buscaEndereço()">Buscar CEP</button>
-    </div>
+    <br>
+    <button onclick="buscaEndereço()">Buscar CEP</button>
+  </div>
 </body>
+
 </html>
 <script>
-    var cep, rua, cidade, pais, estado, bairro
-    function defineCampos(){
-      cep = document.getElementById("cep");
-      rua = document.getElementById("rua");
-      bairro = document.getElementById("bairro");
-      estado = document.getElementById("estado");
-      pais = document.getElementById("pais");
-      cidade = document.getElementById("cidade");
-    }
-    function buscaEndereço(){
-     defineCampos()
+  var cep, rua, cidade, pais, estado, bairro
+  function defineCampos() {
+    cep = document.getElementById("cep");
+    rua = document.getElementById("rua");
+    bairro = document.getElementById("bairro");
+    estado = document.getElementById("estado");
+    pais = document.getElementById("pais");
+    cidade = document.getElementById("cidade");
 
-     if(cep.value == "" || cep.value.length != 8){
-        alert("CEP inválido!")
-     }else{
-
-     var url = "https://viacep.com.br/ws/"+cep.value+"/json"
-     var ponte = new XMLHttpRequest()
-     ponte.open('GET', url)
-     ponte.onload = () => {
-        var resposta = JSON.parse(ponte.responseText)
-        rua.value = resposta.logradouro
-        bairro.value = resposta.bairro
-        cidade.value = resposta.localidade
-        estado.value = resposta.uf
-        pais.value = "Brasil"
-     }
-       ponte.send()
+    if (cep.value.length == 8) {
+      return true
     }
+    return false
+
+  } function buscaEndereço() {
+    if (defineCampos()) {
+
+      var cepValido = cep.value.substr(0, 5) + "-" + cep.value.substr(5)
+      var url = "https://cdn.apicep.com/file/apicep/" + cepValido + ".json"
+      //  var url = "https://viacep.com.br/ws/"+cep.value+"/json"
+
+      // var ponte = new XMLHttpRequest()
+      // ponte.open('GET', url)
+      // ponte.onload = () => {
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          rua.value = data.address
+          bairro.value = data.district
+          cidade.value = data.city
+          estado.value = data.state
+          pais.value = "Brasil"
+        })
+    }
+
+  
+    else {
+    alert("CEP inválido")
+  }
 }
 
 

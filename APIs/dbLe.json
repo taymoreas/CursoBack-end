@@ -1,0 +1,12 @@
+{
+    "cep": {
+        "code": "88132-276",
+        "state": "SC",
+        "city": "Palhoça",
+        "district": "Passa Vinte",
+        "address": "Rua Ariena",
+        "status": 200,
+        "ok": true,
+        "statusText": "ok"
+    }
+}

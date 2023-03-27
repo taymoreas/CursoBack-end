@@ -1,0 +1,31 @@
+HTML
+ <abbr title= "copa do mundo">FIFA</abbr>;
+//
+
+ <a href="link"></a>
+ //
+
+ <ul>
+    <li>
+        batata
+        batatinha
+    </li>
+ </ul> // pontos
+
+ <ol>
+<li>
+    batata
+    batatinha
+</li>
+ </ol>// numeros
+ //
+
+ <b></b>// negrito
+ <i></i>// italico
+ // 
+ 
+  <p class="vermelho"></p>//troca a cor do texto
+  //
+
+
+

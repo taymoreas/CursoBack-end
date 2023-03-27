@@ -1,0 +1,12 @@
+{
+    "cep": {
+        "code": "88107-469",
+        "state": "SC",
+        "city": "São José",
+        "district": "Forquilhas",
+        "address": "Rua Armando Martins Schnorrenberger",
+        "status": 200,
+        "ok": true,
+        "statusText": "ok"
+    }
+}
