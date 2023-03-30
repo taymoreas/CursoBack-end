@@ -27,8 +27,7 @@ HTML
   <p class="vermelho"></p>//troca a cor do texto
   //
 
-get - 
-post -
-put - 
-delete -
-
+get - retorna valores/cria/captura
+post - envio de informações com criptografia 
+put - edição de informações
+delete - marca status da informação como delete
