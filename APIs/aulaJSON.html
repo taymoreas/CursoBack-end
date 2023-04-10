@@ -5,73 +5,63 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>BuscarCarros</title>
 
 </head>
 
-<body>
+<body style="background-color: rgb(255, 255, 255);">
   <div style="text-align: center">
-    <h1 style="color: darkcyan;">Aula json</h1>
+    <h1 style="color: rgb(0, 0, 0);">Busque seu carrinho</h1>
 
-    <input type="number" id="cep" placeholder="Digite o CEP">
+    <input type="text" id="placa" placeholder="Digite o número da placa:" style="width: 400px;height: 20px">
     <br>
-    <input type="text" id="rua" placeholder="Logradouro" value="Rua">
+    <input type="text" id="marca" placeholder="marca" value="Marca:" style="width: 400px; height:20px;">
     <br>
-    <input type="text" id="bairro" placeholder="Bairro" value="bairro">
+    <input type="text" id="modelo" placeholder="modelo" value="Modelo:" style="width: 400px; height: 20px">
     <br>
-    <input type="text" id="pais" placeholder="Pais" value="pais">
+    <input type="number" id="ano" placeholder="ano" value="Ano:" style="width: 400px; height: 20px">
     <br>
-    <input type="text" id="estado" placeholder="uf" value="estado">
     <br>
-    <input type="text" id="cidade" placeholder="localidade" value="cidade">
+    <button onclick="buscaPlaca()" style="width: 100px; height: 40px;">Buscar</button>
     <br>
-    <button onclick="buscaEndereço()">Buscar CEP</button>
+  </div>
+  <br>
+  <br>
+  <div style="text-align: center;">
+    <img src="https://i.ytimg.com/vi/Y6C8KjGxMfI/hqdefault.jpg" width="400" height="300">
   </div>
 </body>
 
 </html>
 <script>
-  var cep, rua, cidade, pais, estado, bairro
+  var placa, marca, modelo, ano
   function defineCampos() {
-    cep = document.getElementById("cep");
-    rua = document.getElementById("rua");
-    bairro = document.getElementById("bairro");
-    estado = document.getElementById("estado");
-    pais = document.getElementById("pais");
-    cidade = document.getElementById("cidade");
+    placa = document.getElementById("placa");
+    marca = document.getElementById("marca");
+    modelo = document.getElementById("modelo");
+    ano = document.getElementById("ano");
 
-    if (cep.value.length == 8) {
+    if (placa.value.length != 7) {
       return true
     }
-    return false
+    else{
 
-  } function buscaEndereço() {
+  } function buscaPlaca() {
     if (defineCampos()) {
 
-      var cepValido = cep.value.substr(0, 5) + "-" + cep.value.substr(5)
-      var url = "https://cdn.apicep.com/file/apicep/" + cepValido + ".json"
-      //  var url = "https://viacep.com.br/ws/"+cep.value+"/json"
-
-      // var ponte = new XMLHttpRequest()
-      // ponte.open('GET', url)
-      // ponte.onload = () => {
+      var url = "file:///C:/Users/tayna_j_moraes/Desktop/Curso%20back-end/curso-Back-end/APIs/exercicios/db.json" + placa
+    
 
       fetch(url)
         .then(res => res.json())
         .then(data => {
-          rua.value = data.address
-          bairro.value = data.district
-          cidade.value = data.city
-          estado.value = data.state
-          pais.value = "Brasil"
+          return alert()
+          placa.value = data[0].placa
+          marca.value = data[0].marca
+          modelo.value = data[0].modelo
+          ano.value = data[0].ano
         })
     }
-
-  
-    else {
-    alert("CEP inválido")
-  }
-}
-
+  }}
 
 </script>
