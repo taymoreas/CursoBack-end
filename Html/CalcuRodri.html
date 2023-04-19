@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora mamilo</title>
+
+    <style>
+        *{
+            margin: 0;/*Margem 0 (apenas à exemplo)*/
+            padding: 0;/*padding 0 (apenas à exemplo)*/
+        }
+        .fundo{
+            background-image: linear-gradient(45deg, black, crimson);/*Cor do fundo do site(em degradê)*/
+            text-align: center;/*Alinhamento do fundo (centro)*/
+            height: 100vh;/*Tamanho (100% da tela)*/
+            color:white;/*Cor da fonte(Letras)*/
+            font-family: Arial;/*fonte da letra*/
+
+        }
+        .calculadora{
+            position: absolute; /*Posição não muda*/
+            background-color: rgba(0, 0, 0, 0.8); /*Cor de fundo da calculadora com alpha("Opacidade")*/
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            border-radius:15px;
+            padding:15px
+        }
+        /*CSS calculadora*/
+        .botao{
+            width:50px; /*Largura dos botões*/
+            height: 50px; /*Altura dos botões*/
+            font-size: 25px; /*Tamanho da fonte Arial*/
+            cursor: pointer; /*Interação especifica ao passar o mouse por cima*/
+            margin:3px; /*Afastamento entre os botões(margem dos botões)*/
+            background-color: rgb(31, 31, 31);/*Fundo da cor dos botões*/
+            border:none; /*sem bordas*/
+            color: #fff;/*Cor das letras*/
+
+        }
+        /*CSS botao */
+
+        .botao:hover{
+            background-color: black;/*A cor de fundo da borda do botão ficará preta*/
+        }
+        /*Interação com a calculadora ao passar o mouse por cima*/
+        #resultado{
+            background-color: white;/*Cor de fundo do resultado*/
+            width: 207px; /*Largura do resultado da operação*/
+            height: 30px; /*altura do resultado da operação*/
+            margin: 5px; /*Alinha,com a margem, o resultado da operação*/
+            font-size: 25px; /*Tamanho da fonte do resultado*/
+            color: black;/*Cor dos numeros a serem operados*/
+            text-align: right;/*Alinhamento dos numeros a serem operados*/
+            padding: 5px;/*"retira a borda", aplica todos os outros conceitos antes aplicados*/
+        }
+    </style>
+</head>
+<body>
+    <div class="fundo">
+        <h1>Calculadora do Rodrigo</h1>
+        <div class="calculadora">
+            <h1>Calculadora</h1>
+            <p id="resultado"></p>
+            <table>
+                <tr>
+                    <td> <button class ="botao" onclick=clean()>C</button> </td>
+                    <td> <button class ="botao" onclick="backspace()"><</button> </td>
+                    <td> <button class ="botao" onclick="insert('/')">/</button> </td>
+                    <td> <button class ="botao" onclick="insert('*')">x</button> </td>
+                </tr>
+                
+                <tr>
+                    <td> <button class ="botao" onclick="insert('7')">7</button> </td>
+                    <td> <button class ="botao" onclick="insert('8')">8</button> </td>
+                    <td> <button class ="botao" onclick="insert('9')">9</button> </td>
+                    <td> <button class ="botao" onclick="insert('-')">-</button> </td>
+                </tr>
+                
+                <tr>
+                    <td> <button class ="botao" onclick="insert('4')">4</button> </td>
+                    <td> <button class ="botao" onclick="insert('5')">5</button> </td>
+                    <td> <button class ="botao" onclick="insert('6')">6</button> </td>
+                    <td> <button class ="botao" onclick="insert('+')">+</button> </td>
+                </tr>
+                
+                <tr>
+                    <td> <button class ="botao" onclick="insert('1')">1</button> </td>
+                    <td> <button class ="botao" onclick="insert('2')">2</button> </td>
+                    <td> <button class ="botao" onclick="insert('3')">3</button> </td>
+                    <td rowspan="2"> <button class ="botao" style ="height: 106px;" onclick="calcular()">=</button> </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2"> <button class ="botao" style = "width: 102px; height: 55px;" onclick="insert('0')">0</button> </td>
+                    <td> <button class ="botao" style ="height: 55px;" onclick="insert('.')">.</button > </td>
+                </tr>
+    
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function insert(num)
+        {
+        var numero = document.getElementById('resultado').innerHTML; /*'captura' o número e o coloca no html via innerHTML*/
+        document.getElementById("resultado").innerHTML = numero + num; /*Faz com que a repetição dos numeros ocorra, visto que antes, ao escrever 5 e depois 6, o numero 5 desaparecia*/
+        }
+        /*Insere o número à caixinha do resultado*/
+
+        function clean()
+        {
+            document.getElementById("resultado").innerHTML = "";
+        }
+        /*Apaga todos os digitos*/
+        function backspace()
+        {
+        var resultado = document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1);
+        }
+        /*Função para apagar o ultimo dígito da operação via substring(pega a primeira posição, diminui pela segunda e aplica o resultado como string)*/
+        
+        function calcular()
+        {
+            var resultado = document.getElementById('resultado').innerHTML
+            if(resultado)/*se houver um numero inserido...*/
+            {
+                document.getElementById('resultado').innerHTML = eval(resultado);
+            }
+            else /*caso não haja um numero digitado*/
+            {
+                document.getElementById('resultado').innerHTML = "Digite um valor..."
+            }
+
+        }
+
+        
+    </script>
+    
+</body>
+</html>
