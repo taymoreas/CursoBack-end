@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuscarCarros</title>
+
+</head>
+
+<body style="background-color: rgb(255, 255, 255);">
+  <div style="text-align: center">
+    <h1 style="color: rgb(0, 0, 0);">Busque seu carrinho</h1>
+
+    <input type="text" id="placa" placeholder="Digite o número da placa:" style="width: 400px;height: 20px">
+    <br>
+    <input type="text" id="marca" placeholder="marca" value="Marca:" style="width: 400px; height:20px;">
+    <br>
+    <input type="text" id="modelo" placeholder="modelo" value="Modelo:" style="width: 400px; height: 20px">
+    <br>
+    <input type="number" id="ano" placeholder="ano" value="Ano:" style="width: 400px; height: 20px">
+    <br>
+    <br>
+    <button onclick="buscaPlaca()" style="width: 100px; height: 40px;">Buscar</button>
+    <br>
+  </div>
+  <br>
+  <br>
+  <div style="text-align: center;">
+    <img src="https://i.ytimg.com/vi/Y6C8KjGxMfI/hqdefault.jpg" width="400" height="300">
+  </div>
+</body>
+
+</html>
+<script>
+  var placa, marca, modelo, ano
+  function defineCampos() {
+    placa = document.getElementById("placa");
+    marca = document.getElementById("marca");
+    modelo = document.getElementById("modelo");
+    ano = document.getElementById("ano");
+
+    if (placa.value.length != 7) {
+      return true
+    }
+    else{
+
+  } function buscaPlaca() {
+    if (defineCampos()) {
+
+      var url = "file:///C:/Users/tayna_j_moraes/Desktop/Curso%20back-end/curso-Back-end/APIs/exercicios/db.json" + placa
+    
+
+      fetch(url)
+        .then(res => res.json())
+        .then(data => {
+          return alert()
+          placa.value = data[0].placa
+          marca.value = data[0].marca
+          modelo.value = data[0].modelo
+          ano.value = data[0].ano
+        })
+    }
+  }}
+
+</script>
