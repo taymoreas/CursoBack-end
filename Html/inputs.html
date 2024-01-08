@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inputs</title>
+  </head>
+  <body>
+    <div>
+      <!-- size: Tamanho do input (Recomenda-se determinar no css). -->
+      <!-- maxlength: Quantidade máxima de caracteres que podem ser digitados. -->
+      <input
+        type="email"
+        placeholder="email"
+        required
+        size="10"
+        maxlength="20"
+      />
+      <button type="submit">Enviar</button>
+    </div>
+    <div>
+      <!-- Autofocus: Ao abrir a página o usuário ja estará encaminhado para digitar no input(ex:Google). -->
+      <!-- Required: Dependendo do type aplicado à tag, o required irá exigir determinadas caracteríticas a serem digitadas para prosseguir com a aplicação. -->
+      <input type="number" name="number" required autofocus />
+      <button type="submit">Enviar</button>
+    </div>
+    <div>
+      <input type="range" min="1" max="30" required />
+      <button type="submit">Enviar</button>
+    </div>
+    <div>
+      <input type="color" name="color" />
+      <button type="submit">Enviar</button>
+    </div>
+    <div>
+      <input type="datetime-local" name="data" />
+      <button type="submit">Enviar</button>
+    </div>
+  </body>
+</html>
