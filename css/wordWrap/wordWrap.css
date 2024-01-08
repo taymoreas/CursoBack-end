@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+
+.word {
+  width: 200px;
+  height: 250px;
+  color: red;
+  border: #000 solid 1px;
+  /* Quebrará palavras do seu texto respeitando o espaçamento*/
+  word-wrap: break-word;
+}
