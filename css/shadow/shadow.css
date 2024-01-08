@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+}
+
+.shadow {
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  /* (Distância horizontal(valores negativos:esquerda, 
+  positivos:direita), 
+  distancia na vertical(negativo:cima, positivo:baixo), 
+  blur(esfumaçado), 
+  cor) */
+  box-shadow: 10px 10px 5px #000;
+  text-shadow: 10px 10px #000;
+}

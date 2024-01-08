@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+}
+
+.degrade {
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(red, pink, white);
+}
+
+.degrade__2 {
+  width: 500px;
+  height: 300px;
+  /* O "num"Deg no linear-gradient é usado para estabelecer diferentes tipos de degrades com direções diferentes. */
+  background: linear-gradient(-65deg, blue, purple, white);
+  /* Usados para serem adaptados a diferentes tipos de browsers */
+  background: -moz-linear-gradient(white, green);
+  background: -o-linear-gradient(white, pink);
+}
