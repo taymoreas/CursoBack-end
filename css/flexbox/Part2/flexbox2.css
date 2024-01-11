@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+}
+
+.container {
+  background-color: rgb(201, 201, 201);
+  display: flex;
+  font-size: 10px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.um {
+  margin: 10px;
+  padding: 10px;
+  background-color: red;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.nove {
+  margin: 10px;
+  padding: 10px;
+  background-color: red;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  align-self: flex-end;
+}

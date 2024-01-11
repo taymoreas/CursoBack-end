@@ -1,0 +1,54 @@
+.body {
+  margin: 0;
+  display: flex;
+}
+
+/* flex: row = organiza os elementos em ordem de linha, horizontal */
+/* flex: column = organiza os elementos na :vertical */
+/* flex: row-reverse = a ordem dos elementos organizados em linha são de direita par esquerda */
+/* flex: column-reverse = a ordem dos elementos organizados na vertical é de baixo para cima */
+
+.div1 {
+  background-color: gray;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+  flex: 1;
+}
+
+.div2 {
+  background-color: gray;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+  flex: 1;
+}
+.div3 {
+  background-color: gray;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+  /* Faz com que este elemento fique 2x maior que os outros */
+  flex: 2;
+}
+
+.um {
+  background-color: gray;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+}
+
+.dois {
+  background-color: gray;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+}
+
+.tres {
+  background-color: gray;
+  font-size: 1rem;
+  padding: 10px;
+  margin: 10px;
+}
