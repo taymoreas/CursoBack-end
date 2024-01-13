@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(218, 217, 217);
+} 
+
+main {
+  display: flex;
+}
+
+.container {
+  width: 380px;
+  height: 150vh;
+  background-color: #09253b;
+  color: white;
+  border: 1px solid #09253b;
+}
+
+.profile_img {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  margin: 40px 0 0 50px;
+  border: 8px solid white;
+}
+
+.profile_paragraph {
+  background-color: #03131f;
+  width: 170px;
+  height: 25px;
+  margin: 20px 0 15px 90px;
+  text-align: center;
+  padding-top: 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.profile_name {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-left: 70px;
+}
+
+.profile_work {
+  margin: -15px 0 0 105px;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.profile_title {
+  background-color: #03131f;
+  height: 35px;
+  padding: 13px 0 0 20px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 0.8rem;
+  margin: 15px 0 0 25px;
+  font-weight: 300;
+}
+
+.paragraph_aboutMe {
+  font-size: 0.8rem;
+  margin: 15px 0 0 25px;
+  font-weight: 300;
+  text-align: left;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.content {
+  background-color: #fff;
+  box-shadow: 2px 2px 4px 1px rgb(189, 189, 189);
+  border-radius: 8px;
+  width: 200vh;
+  height: 200px;
+  margin: 20px 0 0 0;
+  padding: 40px 0 0 0;
+}
+
+.formation {
+  background-color: #F07539;
+  color: #fff;
+  width: 40px;
+  height: 160px;
+  border-radius: 5px;
+  text-align: center;
+  writing-mode: vertical-rl; 
+  text-orientation: mixed; 
+  white-space: nowrap; 
+  transform: rotate(180deg);
+  margin: 0;
+}
+
+.experience {
+  background-color: #ED3944;
+  color: #fff;
+  width: 40px;
+  height: 160px;
+  border-radius: 5px;
+  text-align: center;
+  writing-mode: vertical-rl; 
+  text-orientation: mixed; 
+  white-space: nowrap; 
+  transform: rotate(180deg);
+  margin: 0;
+}
+
+.skills {
+  background-color: #39A3F7;
+  color: #fff;
+  width: 40px;
+  height: 160px;
+  border-radius: 5px;
+  text-align: center;
+  writing-mode: vertical-rl; 
+  text-orientation: mixed; 
+  white-space: nowrap; 
+  transform: rotate(180deg);
+  margin: 0;
+}
