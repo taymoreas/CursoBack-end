@@ -1,102 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+      body {
+        font-family: Arial, sans-serif;
+      }
 
-        .profile-info {
-            border: 0;
-        }
+      .profile-info {
+        border: 0;
+      }
 
-        .campo {
-            width: 25%;
-        }
+      .campo {
+        width: 25%;
+      }
 
-        .profile-container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
+      .profile-container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+      }
 
-        img.avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
+      img.avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
 
-        .profile-info {
-            margin-bottom: 20px;
-        }
+      .profile-info {
+        margin-bottom: 20px;
+      }
 
-        .profile-info p {
-            margin: 5px;
-        }
+      .profile-info p {
+        margin: 5px;
+      }
     </style>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil do GitHub</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="profile-container">
-        <h1>Perfil do GitHub</h1>
-        <form onsubmit="return getProfile()">
-            <input class="campo" type="text" id="usernameInput" placeholder="Digite o nome de usuário do GitHub"
-                required>
-            <button onclick="getProfile()" type="submit">Buscar</button>
-        </form>
-        <div></div>
-        <div id="profile">
-
-        </div>
+      <h1>Perfil do GitHub</h1>
+      <form onsubmit="return getProfile()">
+        <input
+          class="campo"
+          type="text"
+          id="usernameInput"
+          placeholder="Digite o nome de usuário do GitHub"
+          required
+        />
+        <button onclick="getProfile()" type="submit">Buscar</button>
+      </form>
+      <div id="profile"></div>
     </div>
     <div id="profileInfo" class="profile-info"></div>
-    </div>
-
     <script>
-        let fotoDePerfil, nomeDePerfil, nomeDeUsuario, numeroDeSeguidores, pessoasSeguindo, linkRepositorio;
+      let fotoDePerfil,
+        nomeDePerfil,
+        nomeDeUsuario,
+        numeroDeSeguidores,
+        pessoasSeguindo,
+        linkRepositorio;
+      function defineCampos() {
+        fotoDePerfil = document.getElementById("fotoDePerfil");
+        nomeDePerfil = document.getElementById("nomeDePerfil");
+        nomeDeUsuario = document.getElementById("nomeDeUsuario");
+        numeroDeSeguidores = document.getElementById("numeroDeSeguidores");
+        pessoasSeguindo = document.getElementById("pessoasSeguindo");
+        linkRepositorio = document.getElementById("linkRepositorio");
+      }
 
-        function defineCampos() {
-            fotoDePerfil = document.getElementById("fotoDePerfil");
-            nomeDePerfil = document.getElementById("nomeDePerfil");
-            nomeDeUsuario = document.getElementById("nomeDeUsuario");
-            numeroDeSeguidores = document.getElementById("numeroDeSeguidores");
-            pessoasSeguindo = document.getElementById("pessoasSeguindo");
-            linkRepositorio = document.getElementById("linkRepositorio");
-        }
-
-        function getProfile() {
-            defineCampos();
-
-            event.preventDefault();//previne a ação padrão do navegador  
-
-            const username = document.getElementById('usernameInput').value;
-            var url = `https://api.github.com/users/${username}`
-
-            fetch(url)
-                .then(res => res.json())
-                .then(data => {
-                    perfil = document.getElementById("profile")
-                    perfil.innerHTML = `
-                    <p class="campos-c">Nome de usuário: ${data.login}</p>
+      function getProfile() {
+        defineCampos();
+        event.preventDefault(); //previne a ação padrão do navegador
+        const username = document.getElementById("usernameInput").value;
+        var url = `https://api.github.com/users/${username}`;
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            perfil = document.getElementById("profile");
+            perfil.innerHTML = `
+                <p class="campos-c">Nome de usuário: ${data.login}</p>
                 <p class="campos-c">Repositórios públicos: ${data.public_repos}</p>
                 <p class="campos-c">Seguidores: ${data.followers}</p>
                 <p class="campos-c">Seguindo: ${data.following}</p>
                 <p class="campos-c"><a href="${data.html_url}">Repositório</a></p>
                 `;
-
-                
-                })
-
-
-        }
-
+          });
+      }
     </script>
-</body>
-
+  </body>
 </html>
