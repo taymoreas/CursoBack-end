@@ -1,8 +1,8 @@
 body {
   margin: 0;
   font-family: "Nunito", sans-serif;
-  background-color: rgb(218, 217, 217);
-} 
+  background-color: rgb(233, 233, 233);
+}
 
 main {
   display: flex;
@@ -17,8 +17,8 @@ main {
 }
 
 .profile_img {
-  width: 250px;
-  height: 250px;
+  width: 210px;
+  height: 210px;
   border-radius: 100%;
   margin: 40px 0 0 50px;
   border: 8px solid white;
@@ -72,13 +72,13 @@ main {
   text-align: left;
 }
 
-i {
-  margin-right: 5px;
+li {
+  font-size: 0.9rem;
 }
 
 .content {
   background-color: #fff;
-  box-shadow: 2px 2px 4px 1px rgb(189, 189, 189);
+  box-shadow: 2px 2px 4px 1px rgb(196, 196, 196);
   border-radius: 8px;
   width: 200vh;
   height: 200px;
@@ -86,44 +86,34 @@ i {
   padding: 40px 0 0 0;
 }
 
-.formation {
-  background-color: #F07539;
-  color: #fff;
-  width: 40px;
-  height: 160px;
-  border-radius: 5px;
-  text-align: center;
-  writing-mode: vertical-rl; 
-  text-orientation: mixed; 
-  white-space: nowrap; 
-  transform: rotate(180deg);
-  margin: 0;
-}
-
-.experience {
-  background-color: #ED3944;
-  color: #fff;
-  width: 40px;
-  height: 160px;
-  border-radius: 5px;
-  text-align: center;
-  writing-mode: vertical-rl; 
-  text-orientation: mixed; 
-  white-space: nowrap; 
-  transform: rotate(180deg);
-  margin: 0;
-}
-
 .skills {
-  background-color: #39A3F7;
   color: #fff;
   width: 40px;
   height: 160px;
   border-radius: 5px;
   text-align: center;
-  writing-mode: vertical-rl; 
-  text-orientation: mixed; 
-  white-space: nowrap; 
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
   transform: rotate(180deg);
   margin: 0;
+}
+
+.formation-paragraph1 {
+  margin: -170px 0 0 60px;
+}
+
+.formation-paragraph2 {
+  margin: 3px 0 0 60px;
+}
+
+.classification {
+  margin: -175px 0 0 60px;
+}
+
+.fake {
+  color: red;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-left: 90px;
 }
