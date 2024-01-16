@@ -6,12 +6,36 @@ body {
 header {
   display: flex;
   justify-content: center;
+  height: 120px;
 }
 
 .container {
   width: 990px;
-  height: 100px;
-  background-color: aqua;
   display: flex;
   justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+nav ul,
+nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav a {
+  display: block;
 }

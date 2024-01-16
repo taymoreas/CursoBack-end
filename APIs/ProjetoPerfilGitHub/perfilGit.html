@@ -1,49 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-
-      .profile-info {
-        border: 0;
-      }
-
-      .campo {
-        width: 25%;
-      }
-
-      .profile-container {
-        max-width: 600px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      img.avatar {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-bottom: 10px;
-      }
-
-      .profile-info {
-        margin-bottom: 20px;
-      }
-
-      .profile-info p {
-        margin: 5px;
-      }
-    </style>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Perfil do GitHub</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c7166a4489.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-
   <body>
     <div class="profile-container">
-      <h1>Perfil do GitHub</h1>
+      <h1 class="title">
+        <i class="fa-brands fa-github" style="color: #ffffff"></i>
+        GitHub Profile
+      </h1>
       <form onsubmit="return getProfile()">
         <input
           class="campo"
@@ -52,7 +31,9 @@
           placeholder="Digite o nome de usuário do GitHub"
           required
         />
-        <button onclick="getProfile()" type="submit">Buscar</button>
+        <button class="profile_button" onclick="getProfile()" type="submit">
+          Buscar
+        </button>
       </form>
       <div id="profile"></div>
     </div>
@@ -83,11 +64,12 @@
           .then((data) => {
             perfil = document.getElementById("profile");
             perfil.innerHTML = `
-                <p class="campos-c">Nome de usuário: ${data.login}</p>
-                <p class="campos-c">Repositórios públicos: ${data.public_repos}</p>
-                <p class="campos-c">Seguidores: ${data.followers}</p>
-                <p class="campos-c">Seguindo: ${data.following}</p>
-                <p class="campos-c"><a href="${data.html_url}">Repositório</a></p>
+                <img class="campos-c" src="${data.avatar_url}"/>
+                <p class="campos-c">Nome de usuário: <br> ${data.login}</p>
+                <p class="campos-c">Seguidores: <br> ${data.followers}</p>
+                <p class="campos-c">Seguindo: <br> ${data.following}</p>
+                <p class="campos-c">Repositórios públicos: <br> ${data.public_repos}</p>
+                <p class="campos-c"><a href="${data.html_url}">Repositórios</a></p>
                 `;
           });
       }
