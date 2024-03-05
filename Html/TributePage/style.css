@@ -1,0 +1,31 @@
+.container {
+    width: 100%;
+    height: 100px;
+    background-color: #95020D;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+nav {
+    display: flex;
+}
+
+.header__img {
+    width: 70px;
+    height: 70px;
+    border-radius: 40px;
+    margin: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white; 
+    margin: 25px;
+    text-transform: uppercase;
+}
+
+nav a:hover  {
+    font-size: 1.3rem;
+    transition: 0.2s;
+}
