@@ -1,5 +1,14 @@
+*{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
 .container {
-    width: 100%;
+    width: 75%;
     height: 100px;
     background-color: #95020D;
     display: flex;
@@ -28,4 +37,54 @@ nav a {
 nav a:hover  {
     font-size: 1.3rem;
     transition: 0.2s;
+}
+
+article{
+    display: flex;
+    justify-content: center;
+}
+
+.home {
+    display: flex;
+    width: 1430px;
+    height: 800px;
+    background-position: center;
+    background-image: url(https://image.europafm.com/clipping/cmsimages02/2023/02/12/20C3FAB3-334F-4D99-9911-EC8299B3D14F/rihanna_98.jpg?crop=3081,1733,x0,y0&width=1900&height=1069&optimize=low&format=webply);
+    text-align: left;
+}
+
+.home__title {
+    color: #fff;
+    margin: 180px 0 0 160px;
+    font-family: "Jockey One", sans-serif;
+    font-size: 3rem;
+}
+
+.section__about {
+    display: flex;
+    justify-content: center;
+}
+
+.container__about{
+    background-color: #000;
+    width: 1430px;
+    height: 450px;
+    border: #fff solid 2px;
+    display: flex;
+}
+
+.about__paragraph {
+    color: #fff;
+    width: 900px;
+    margin: 80px 0 0 40px;
+}
+
+.about__paragraph strong {
+    font-family: "Jockey One", sans-serif;
+}
+
+.about__img {
+    width: 350px;
+    height: 350px;
+    margin: 70px;
 }
